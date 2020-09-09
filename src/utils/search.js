@@ -93,9 +93,23 @@ const paginateMovies = (movies, query) => {
   }
 }
 
+const paginateSearchMovies = (movies) => {
+  const totalAmount = movies.length
+  const data = movies
+  const offset = 0
+  const limit = 0
+  return {
+    totalAmount,
+    data,
+    offset,
+    limit,
+  }
+}
+
 module.exports = {
   searchMovies,
   filterMovies,
   sortMovies,
   paginateMovies,
+  paginateSearchMovies,
 }

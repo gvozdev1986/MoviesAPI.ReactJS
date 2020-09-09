@@ -2,7 +2,7 @@ const remove = require('lodash/remove')
 
 const movies = require('../data/movies.json')
 const { generateId } = require('../utils')
-const { searchMovies, filterMovies, sortMovies, paginateMovies } = require('../utils/search')
+const { searchMovies, filterMovies, sortMovies, paginateMovies, paginateSearchMovies } = require('../utils/search')
 
 const getMovies = async (query) => {
   const foundMovies = searchMovies(movies, query)
@@ -23,7 +23,7 @@ const getMovieBySearchString = async (string) => {
       allFindMovies.push(movies[i])
     }
   }
-  return allFindMovies
+  return paginateSearchMovies(allFindMovies)
 }
 
 const deleteMovie = async (movieId) => {
