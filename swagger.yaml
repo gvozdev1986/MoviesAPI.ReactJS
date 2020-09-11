@@ -169,6 +169,13 @@ paths:
       tags:
         - movie
       operationId: MoviesGetByTitleString (contains string in title)
+      parameters:
+        - name: string
+          in: path
+          required: true
+          description: Movie search by string
+          schema:
+            type: string
       responses:
         "200":
           description: Movies list
@@ -176,6 +183,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/MoviesResponse"
+        "404":
+          description: Movie not found
 
 servers:
   - url: http://localhost:4000/
