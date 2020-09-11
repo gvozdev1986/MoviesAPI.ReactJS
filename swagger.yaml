@@ -162,29 +162,20 @@ paths:
         "404":
           description: Movie not found
 
-  "/movies/search/{string}":
+  /movies/search/{string}:
     get:
-      description: Get movie by string
-      summary: Get movie by string
+      description: Get movies list by included string in title
+      summary: Get movies list by included string in title
       tags:
         - movie
-      operationId: MoviesGetByString
-      parameters:
-        - name: string
-          in: path
-          required: true
-          description: Movie search by string
-          schema:
-            type: string
+      operationId: MoviesGetByTitleString (contains string in title)
       responses:
         "200":
-          description: Movie object
+          description: Movies list
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Movie"
-        "404":
-          description: Movie not found
+                $ref: "#/components/schemas/MoviesResponse"
 
 servers:
   - url: http://localhost:4000/
