@@ -187,7 +187,7 @@ paths:
           description: Movie not found
 
 servers:
-  - url: http://localhost:4000/
+  - url: https://movie-q2020-api.herokuapp.com/
 components:
   schemas:
     MoviesResponse:
